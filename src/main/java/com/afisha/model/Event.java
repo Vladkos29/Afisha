@@ -14,17 +14,19 @@ public class Event {
     @Column(name = "name_event")
     private String name_event;
 
-    @Column(name = "genre_event")
-    private int genre_event;
+    @ManyToOne(optional = false, cascade = CascadeType.ALL)
+    @JoinColumn(name = "genre_event")
+    private Genre genre_event;
 
     @Column(name = "datetime_start_event")
-    private int datetime_start_event;
+    private long datetime_start_event;
 
     @Column(name = "datetime_end_event")
-    private int datetime_end_event;
+    private long datetime_end_event;
 
-    @Column(name = "location")
-    private int location;
+    @ManyToOne(optional = false, cascade = CascadeType.ALL)
+    @JoinColumn(name = "location")
+    private Place location;
 
     @Column(name = "metadata_event")
     private String metadata_event;
@@ -37,6 +39,7 @@ public class Event {
 
     @Column(name = "rating_event")
     private int rating;
+
 
     public int getId() {
         return id_event;
@@ -54,35 +57,35 @@ public class Event {
         this.name_event = name_event;
     }
 
-    public int getGenre_event() {
+    public Genre getGenre_event() {
         return genre_event;
     }
 
-    public void setGenre_event(int genre_event) {
+    public void setGenre_event(Genre genre_event) {
         this.genre_event = genre_event;
     }
 
-    public int getDatetime_start_event() {
+    public long getDatetime_start_event() {
         return datetime_start_event;
     }
 
-    public void setDatetime_start_event(int datetime_start_event) {
+    public void setDatetime_start_event(long datetime_start_event) {
         this.datetime_start_event = datetime_start_event;
     }
 
-    public int getDatetime_end_event() {
+    public long getDatetime_end_event() {
         return datetime_end_event;
     }
 
-    public void setDatetime_end_event(int datetime_end_event) {
+    public void setDatetime_end_event(long datetime_end_event) {
         this.datetime_end_event = datetime_end_event;
     }
 
-    public int getLocation() {
+    public Place getLocation() {
         return location;
     }
 
-    public void setLocation(int location) {
+    public void setLocation(Place location) {
         this.location = location;
     }
 
@@ -117,4 +120,5 @@ public class Event {
     public void setRating(int rating) {
         this.rating = rating;
     }
+
 }

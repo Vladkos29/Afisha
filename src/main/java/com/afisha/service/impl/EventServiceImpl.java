@@ -14,8 +14,8 @@ public class EventServiceImpl implements EventService {
     private EventDAO eventDAO;
 
     @Autowired
-    public void setGenreDAO(EventDAO genreDAO) {
-        this.eventDAO = genreDAO;
+    public void setGenreDAO(EventDAO eventDAO) {
+        this.eventDAO = eventDAO;
     }
 
     @Transactional

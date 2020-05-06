@@ -1,10 +1,12 @@
 package com.afisha.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "genres")
-public class Genre {
+public class Genre implements Serializable {
 
     @Id
     @Column(name = "id_genre")
