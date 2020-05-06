@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Load image</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<div>
+    <label>
+        Количество изображений для загрузки (от 1 до 10):
+        <input type="text" size="10" id="url-amount">
+    </label>
+    <button type="button" id="apply-url-number"> Применить</button>
+</div>
+<form action="" method="post" id="url-fields">
+
+</form>
+<script>
+    $(document).ready(function () {
+        $("#url-amount").on("keypress keyup blur", function (event) {
+            $(this).val($(this).val().replace(/[^\d].+/, ""));
+            if ((event.which < 48 || event.which > 57)) {
+                event.preventDefault();
+            }
+        });
+        $("#url-amount").on("change", function (event) {
+            if ($(this).val() > 10) {
+                $(this).val(10);
+            }
+            if ($(this).val() < 1) {
+                $(this).val(1);
+            }
+        });
+        $("#apply-url-number").on("click", function () {
+            $("#url-fields").empty();
+            const urlAmount = $("#url-amount").val();
+            for (let field = 0; field < urlAmount; field++) {
+                $("#url-fields").append(
+                    "Cсылка " + (parseInt(field) + 1) + ": <input type='text' size='100' class='input-field'><br>"
+                )
+            }
+            $("#url-fields").append(
+                "<button id='send' type='button'>Отправить</button>"
+            );
+            $("#send").on('click', function () {
+                let urlList = [];
+                $(".input-field").each(function () {
+                    urlList.push($(this).val())
+                });
+                let urls = {
+                    "urlList": urlList
+                };
+                $.ajax({
+                    url: "http://localhost:8080/load-image/",
+                    type: "POST",
+                    data: JSON.stringify(urls),
+                    contentType: "application/json",
+                    dataType: "json",
+                    success: function (objectResponse) {
+                        if (objectResponse.responseCode === "ERROR") {
+                            alert(objectResponse.errorMessage)
+                        }
+                        if (objectResponse.responseCode === "SUCCESS") {
+                            alert("Загружено изображений: " + objectResponse.response.length)
+                        }
+                    }
+                });
+            })
+        });
+
+    })
+</script>
+
+</body>
+</html>

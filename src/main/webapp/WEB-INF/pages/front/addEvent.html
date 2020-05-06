@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Add</title>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+   {"name_event": "?", "genre_event": ?, "datetime_start_event": ?,
+   "datetime_end_event": ?, "location": ?, "metadata_event": ?, "adults_only": ?, "active": ?, "rating_event": ?}
+  <script>
+  $(document).ready(function () {
+      $.ajax({
+          url: "http://localhost:8888/add",
+          type: "POST",
+          data: JSON.stringify({name_event:"Test",genre_event: 3,datetime_start_event:1599990834599, 
+            datetime_end_event:1599990834599,location:{city:"Vologda",street:"Galkiskaya",building:"1", latitude:53.2133,longitude:25.2332, id:6},
+            metadata_event:"tad sada wwq qwe we", adults_only:1,active:1,rating_event:4}),
+          contentType: "application/json",
+          dataType: "json",
+          success: function (objectResponse) {
+              if (objectResponse.responseCode === "ERROR") {
+                  alert(objectResponse.errorMessage)
+              }
+              if (objectResponse.responseCode === "SUCCESS") {
+                  alert("Успешно!")
+              }
+          }
+      });
+  })
+  </script>
+</div>
+</body>
+</html>
