@@ -3,9 +3,10 @@ C:\Users\User\Desktop\Диплом Проект\code ver2\src\main\java\com\afis
 C:\Users\User\Desktop\Диплом Проект\code ver2\src\main\java\com\afisha\dao\impl\PlaceDAOImpl.java
 C:\Users\User\Desktop\Диплом Проект\code ver2\src\main\java\com\afisha\config\AppInitializer.java
 C:\Users\User\Desktop\Диплом Проект\code ver2\src\main\java\com\afisha\controller\RestResponse.java
+C:\Users\User\Desktop\Диплом Проект\code ver2\src\main\java\com\afisha\controller\EventsController.java
 C:\Users\User\Desktop\Диплом Проект\code ver2\src\main\java\com\afisha\dao\GenreDAO.java
-C:\Users\User\Desktop\Диплом Проект\code ver2\src\main\java\com\afisha\config\SecurityConfig.java
 C:\Users\User\Desktop\Диплом Проект\code ver2\src\main\java\com\afisha\config\WebConfig.java
+C:\Users\User\Desktop\Диплом Проект\code ver2\src\main\java\com\afisha\controller\PlacesController.java
 C:\Users\User\Desktop\Диплом Проект\code ver2\src\main\java\com\afisha\service\impl\PlaceServiceImpl.java
 C:\Users\User\Desktop\Диплом Проект\code ver2\src\main\java\com\afisha\model\Event.java
 C:\Users\User\Desktop\Диплом Проект\code ver2\src\main\java\com\afisha\dao\impl\GenreDAOImpl.java
@@ -13,7 +14,7 @@ C:\Users\User\Desktop\Диплом Проект\code ver2\src\main\java\com\afis
 C:\Users\User\Desktop\Диплом Проект\code ver2\src\main\java\com\afisha\model\Genre.java
 C:\Users\User\Desktop\Диплом Проект\code ver2\src\main\java\com\afisha\model\Place.java
 C:\Users\User\Desktop\Диплом Проект\code ver2\src\main\java\com\afisha\service\EventService.java
-C:\Users\User\Desktop\Диплом Проект\code ver2\src\main\java\com\afisha\controller\MainController.java
+C:\Users\User\Desktop\Диплом Проект\code ver2\src\main\java\com\afisha\controller\GenresController.java
 C:\Users\User\Desktop\Диплом Проект\code ver2\src\main\java\com\afisha\controller\ResponseCode.java
 C:\Users\User\Desktop\Диплом Проект\code ver2\src\main\java\com\afisha\service\impl\GenreServiceImpl.java
 C:\Users\User\Desktop\Диплом Проект\code ver2\src\main\java\com\afisha\dao\EventDAO.java

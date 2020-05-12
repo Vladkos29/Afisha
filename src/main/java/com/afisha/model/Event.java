@@ -14,7 +14,7 @@ public class Event {
     @Column(name = "name_event")
     private String name_event;
 
-    @ManyToOne(optional = false, cascade = CascadeType.ALL)
+    @ManyToOne(fetch=FetchType.EAGER, optional = false)
     @JoinColumn(name = "genre_event")
     private Genre genre_event;
 
@@ -24,7 +24,7 @@ public class Event {
     @Column(name = "datetime_end_event")
     private long datetime_end_event;
 
-    @ManyToOne(optional = false, cascade = CascadeType.ALL)
+    @ManyToOne(fetch=FetchType.EAGER, optional = false)
     @JoinColumn(name = "location")
     private Place location;
 
@@ -34,8 +34,8 @@ public class Event {
     @Column(name = "adults_only")
     private int adults_only;
 
-    @Column(name = "active")
-    private int active;
+    @Column(name = "image_url")
+    private String image_url;
 
     @Column(name = "rating_event")
     private int rating;
@@ -105,12 +105,12 @@ public class Event {
         this.adults_only = adults_only;
     }
 
-    public int getActive() {
-        return active;
+    public String getImage_url() {
+        return image_url;
     }
 
-    public void setActive(int active) {
-        this.active = active;
+    public void setImage_url(String image_url) {
+        this.image_url = image_url;
     }
 
     public int getRating() {

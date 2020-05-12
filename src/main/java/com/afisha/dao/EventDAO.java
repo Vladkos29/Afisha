@@ -1,7 +1,6 @@
 package com.afisha.dao;
 
 import com.afisha.model.Event;
-
 import java.util.List;
 
 public interface EventDAO{

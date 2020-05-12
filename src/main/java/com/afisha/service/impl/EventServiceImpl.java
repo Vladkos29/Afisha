@@ -4,6 +4,7 @@ import com.afisha.dao.EventDAO;
 import com.afisha.model.Event;
 import com.afisha.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
